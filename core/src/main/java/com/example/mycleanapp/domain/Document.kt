@@ -2,6 +2,9 @@ package com.example.mycleanapp.domain
 
 import java.io.Serializable
 
+/*
+* Document model
+* */
 data class Document(
     val url: String,
     val name: String,
