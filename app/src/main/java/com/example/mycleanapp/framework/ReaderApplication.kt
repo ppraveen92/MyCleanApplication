@@ -11,8 +11,7 @@ class ReaderApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         val documentRepository = DocumentRepository(
-            RoomDocumentDataSource(this),
-            InMemoryOpenDocumentDataSource()
+            RoomDocumentDataSource(this)
         )
 
         ViewModelFactory.inject(

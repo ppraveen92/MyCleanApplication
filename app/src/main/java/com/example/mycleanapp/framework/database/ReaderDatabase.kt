@@ -17,17 +17,12 @@ abstract class ReaderDatabase : RoomDatabase() {
         private const val DATABASE_NAME = "reader.db"
         private var instance: ReaderDatabase? = null
         private fun create(context: Context): ReaderDatabase =
-            Room.databaseBuilder(context, ReaderDatabase::class.java,
-                DATABASE_NAME
-            )
+            Room.databaseBuilder(context, ReaderDatabase::class.java, DATABASE_NAME)
                 .fallbackToDestructiveMigration()
                 .build()
 
         fun getInstance(context: Context): ReaderDatabase =
-            (instance
-                ?: create(
-                    context
-                )).also { instance = it }
+            (instance ?: create(context)).also { instance = it }
     }
 
     abstract fun documentDao(): DocumentDao

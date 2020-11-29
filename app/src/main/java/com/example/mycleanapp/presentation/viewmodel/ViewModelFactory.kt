@@ -9,7 +9,6 @@ object ViewModelFactory : ViewModelProvider.Factory {
 
     lateinit var application: Application
     lateinit var dependencies: Interactors
-    lateinit var viewmodel: LibraryViewModel
     fun inject(application: Application, dependencies: Interactors) {
         ViewModelFactory.application = application
         ViewModelFactory.dependencies = dependencies
@@ -19,8 +18,8 @@ object ViewModelFactory : ViewModelProvider.Factory {
         if (BaseViewModel::class.java.isAssignableFrom(modelClass)) {
             return modelClass.getConstructor(Application::class.java, Interactors::class.java)
                 .newInstance(
-                  application,
-                  dependencies
+                    application,
+                    dependencies
                 )
         } else {
             throw IllegalStateException("ViewModel must extend MajesticViewModel")

@@ -1,14 +1,14 @@
 package com.example.mycleanapp.data
 
 import com.example.mycleanapp.domain.Document
-
+/*
+* Repository : Provides methods for accessing the data that transfer to DataSource
+*
+* */
 class DocumentRepository(
-    private val documentDataSource: DocumentDataSource,
-    private val openDocumentDataSource: OpenDocumentDataSource
+    private val documentDataSource: DocumentDataSource
 ) {
      fun addDocument(document: Document) = documentDataSource.add(document)
      fun getDocuments() = documentDataSource.readAll()
      fun removeDocument(document: Document) = documentDataSource.remove(document)
-    fun setOpenDocument(document: Document) = openDocumentDataSource.setOpenDocument(document)
-    fun getOpenDocument() = openDocumentDataSource.getOpenDocument()
 }
