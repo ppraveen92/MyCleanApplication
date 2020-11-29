@@ -5,11 +5,12 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import com.example.mycleanapp.data.DocumentDataSource
 import com.example.mycleanapp.domain.Document
+import com.example.mycleanapp.framework.database.ReaderDatabase
 import com.example.mycleanapp.framework.db.DocumentEntity
 
 class RoomDocumentDataSource(val context: Context) : DocumentDataSource {
 
-    private val documentDao = MajesticReaderDatabase.getInstance(context).documentDao()
+    private val documentDao = ReaderDatabase.getInstance(context).documentDao()
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override suspend fun add(document: Document) {

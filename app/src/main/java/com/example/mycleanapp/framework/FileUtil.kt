@@ -34,8 +34,6 @@ object FileUtil {
       bitmap?.let { firstPage?.render(it, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY) }
       firstPage?.close()
     pdfRenderer?.close()
-
-    // Write bitmap
     val thumbnailFile = File(context.cacheDir, documentName + "_thumbnail")
 
     try {
