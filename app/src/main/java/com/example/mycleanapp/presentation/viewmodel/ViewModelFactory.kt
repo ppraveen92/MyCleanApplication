@@ -5,6 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.mycleanapp.presentation.Interactors
 
+/*
+*   responsible to instantiate ViewModels
+*
+* */
 object ViewModelFactory : ViewModelProvider.Factory {
 
     lateinit var application: Application
@@ -17,12 +21,9 @@ object ViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (BaseViewModel::class.java.isAssignableFrom(modelClass)) {
             return modelClass.getConstructor(Application::class.java, Interactors::class.java)
-                .newInstance(
-                    application,
-                    dependencies
-                )
+                .newInstance(application, dependencies)
         } else {
-            throw IllegalStateException("ViewModel must extend MajesticViewModel")
+            throw IllegalStateException("ViewModel must extend BaseViewModel")
         }
     }
 

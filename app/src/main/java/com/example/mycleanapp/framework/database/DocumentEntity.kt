@@ -4,6 +4,12 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/*
+*
+* data class which holds the table details(name and fields)
+*
+* */
+
 @Entity(tableName = "document")
 data class DocumentEntity(
     @PrimaryKey val uri: String,

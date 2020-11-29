@@ -4,7 +4,10 @@ import android.app.Application
 import android.net.Uri
 import com.example.mycleanapp.domain.Document
 import com.example.mycleanapp.presentation.Interactors
-
+/*
+* ViewModel where the operation takes place
+*
+* */
 class LibraryViewModel(application: Application, interactors: Interactors) :
     BaseViewModel(application, interactors) {
 

@@ -8,6 +8,13 @@ import com.example.mycleanapp.domain.Document
 import com.example.mycleanapp.framework.database.ReaderDatabase
 import com.example.mycleanapp.framework.db.DocumentEntity
 
+/*
+*
+* DataSourceImpl : Here the datasource would implement and do the operation with data access object which is
+* gained from ReaderDatabase
+*
+* */
+
 class RoomDocumentDataSource(val context: Context) : DocumentDataSource {
 
     private val documentDao = ReaderDatabase.getInstance(context).documentDao()

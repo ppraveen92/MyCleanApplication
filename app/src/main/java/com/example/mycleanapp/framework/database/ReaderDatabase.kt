@@ -6,6 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.mycleanapp.framework.db.DocumentEntity
 
+/*
+* Reader Database provide the data access object which can be used to do operation b/w views and sources
+*
+* */
 @Database(
     entities = [DocumentEntity::class],
     version = 1,
@@ -26,5 +30,4 @@ abstract class ReaderDatabase : RoomDatabase() {
     }
 
     abstract fun documentDao(): DocumentDao
-
 }
