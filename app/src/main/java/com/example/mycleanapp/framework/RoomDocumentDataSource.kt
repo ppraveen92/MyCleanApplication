@@ -13,14 +13,14 @@ class RoomDocumentDataSource(val context: Context) : DocumentDataSource {
     private val documentDao = ReaderDatabase.getInstance(context).documentDao()
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    override suspend fun add(document: Document) {
+    override  fun add(document: Document) {
         val details = FileUtil.getDocumentDetails(context, document.url)
         documentDao.addDocument(
             DocumentEntity(document.url, details.name, details.size, details.thumbnail)
         )
     }
 
-    override suspend fun readAll(): List<Document> = documentDao.getDocuments().map {
+    override  fun readAll(): List<Document> = documentDao.getDocuments().map {
         Document(
             it.uri,
             it.title,
@@ -29,7 +29,7 @@ class RoomDocumentDataSource(val context: Context) : DocumentDataSource {
         )
     }
 
-    override suspend fun remove(document: Document) = documentDao.removeDocument(
+    override  fun remove(document: Document) = documentDao.removeDocument(
         DocumentEntity(document.url, document.name, document.size, document.thumbnail)
     )
 }
