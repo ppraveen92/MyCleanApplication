@@ -1,4 +1,4 @@
-package com.example.mycleanapp.framework
+package com.example.mycleanapp.framework.datasourceimpl
 
 import android.content.Context
 import android.os.Build
@@ -7,6 +7,7 @@ import com.example.mycleanapp.data.DocumentDataSource
 import com.example.mycleanapp.domain.Document
 import com.example.mycleanapp.framework.database.ReaderDatabase
 import com.example.mycleanapp.framework.db.DocumentEntity
+import com.example.mycleanapp.framework.utils.FileUtil
 
 /*
 *

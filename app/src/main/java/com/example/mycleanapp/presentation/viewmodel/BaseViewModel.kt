@@ -3,8 +3,8 @@ package com.example.mycleanapp.presentation.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.mycleanapp.framework.ReaderApplication
-import com.example.mycleanapp.presentation.Interactors
+import com.example.mycleanapp.framework.application.ReaderApplication
+import com.example.mycleanapp.framework.utils.Interactors
 
 /*
 * Base View model which has app context and usecases

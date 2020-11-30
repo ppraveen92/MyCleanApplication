@@ -1,4 +1,4 @@
-package com.example.mycleanapp.framework
+package com.example.mycleanapp.framework.utils
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -34,7 +34,7 @@ object FileUtil {
                 Bitmap.Config.ARGB_8888
             )
         }
-        bitmap?.let { firstPage?.render(it, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY) }
+        bitmap?.let { firstPage.render(it, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY) }
         firstPage?.close()
         pdfRenderer?.close()
         val thumbnailFile = File(context.cacheDir, documentName + "_thumbnail")
@@ -60,11 +60,23 @@ object FileUtil {
                     DocumentDetail(
                         name,
                         metaCursor.getInt(sizeIndex),
-                        getPdfThumbnailUri(context, documentUri, name)
+                        getPdfThumbnailUri(
+                            context,
+                            documentUri,
+                            name
+                        )
                     )
                 } else {
-                    DocumentDetail("No name", 0, "")
+                    DocumentDetail(
+                        "No name",
+                        0,
+                        ""
+                    )
                 }
-            } ?: return DocumentDetail("No name", 0, "")
+            } ?: return DocumentDetail(
+            "No name",
+            0,
+            ""
+        )
     }
 }

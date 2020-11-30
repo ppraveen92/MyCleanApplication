@@ -1,4 +1,4 @@
-package com.example.mycleanapp.presentation
+package com.example.mycleanapp.framework.utils
 
 import com.android.mycleanapp.interactors.*
 /*
