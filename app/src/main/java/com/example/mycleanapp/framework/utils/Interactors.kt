@@ -4,4 +4,4 @@ import com.android.mycleanapp.interactors.*
 /*
 * User actions
 * */
-data class Interactors(val addDocument: AddDocument)
+data class Interactors(val addDocument: AddDocument, val removeDocument: RemoveDocument)

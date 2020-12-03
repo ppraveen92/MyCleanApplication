@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.mycleanapp.R
 import com.example.mycleanapp.framework.factory.ViewModelFactory
 import com.example.mycleanapp.presentation.viewmodel.LibraryViewModel
+import kotlinx.android.synthetic.main.activity_main3.*
+
 /*
 * Activity where user trigger the action
 * */
@@ -16,9 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
-        viewModel = ViewModelProviders.of(this,
+        viewModel = ViewModelProviders.of(
+            this,
             ViewModelFactory
         ).get(LibraryViewModel::class.java)
-        viewModel.addDocument(Uri.parse("@file path"))
+        btnadd.setOnClickListener { viewModel.addDocument(Uri.parse("@file path")) }
+        btnremove.setOnClickListener { viewModel.removeDocument(Uri.parse("@file path")) }
     }
 }

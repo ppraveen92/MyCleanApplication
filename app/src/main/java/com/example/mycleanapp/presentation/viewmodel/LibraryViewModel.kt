@@ -4,6 +4,7 @@ import android.app.Application
 import android.net.Uri
 import com.example.mycleanapp.domain.Document
 import com.example.mycleanapp.framework.utils.Interactors
+
 /*
 * ViewModel where the operation takes place
 *
@@ -13,6 +14,10 @@ class LibraryViewModel(application: Application, interactors: Interactors) :
 
     fun addDocument(uri: Uri) {
         interactors.addDocument(Document(uri.toString(), "", 0, ""))
+    }
+
+    fun removeDocument(uri: Uri) {
+        interactors.removeDocument(Document(uri.toString(), "", 0, ""))
     }
 
 }

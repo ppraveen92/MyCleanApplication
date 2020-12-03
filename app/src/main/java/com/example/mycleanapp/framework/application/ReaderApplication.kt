@@ -2,6 +2,7 @@ package com.example.mycleanapp.framework.application
 
 import android.app.Application
 import com.android.mycleanapp.interactors.AddDocument
+import com.android.mycleanapp.interactors.RemoveDocument
 import com.example.mycleanapp.data.DocumentRepository
 import com.example.mycleanapp.framework.utils.Interactors
 import com.example.mycleanapp.framework.datasourceimpl.RoomDocumentDataSource
@@ -26,7 +27,7 @@ class ReaderApplication : Application() {
             Interactors(
                 AddDocument(
                     documentRepository
-                )
+                ), RemoveDocument(documentRepository)
             )
         )
     }
