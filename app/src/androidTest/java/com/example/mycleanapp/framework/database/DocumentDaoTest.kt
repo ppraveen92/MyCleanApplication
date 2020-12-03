@@ -38,7 +38,7 @@ class DocumentDaoTest {
 
     @Test
     fun addBook() {
-        val document = DocumentEntity("test", "sports", 23, "test.png")
+        val document = DocumentEntity("file:///storage/emulated/0/Download/test.pdf", "sports", 23, "test.png")
         dao.addDocument(document)
         val alldocs = dao.getDocuments()
         assertThat(alldocs).contains(document)
@@ -46,7 +46,7 @@ class DocumentDaoTest {
 
     @Test
     fun removeBook() {
-        val document = DocumentEntity("test", "sports", 23, "test.png")
+        val document = DocumentEntity("file:///storage/emulated/0/Download/test.pdf", "sports", 23, "test.png")
         dao.removeDocument(document)
         val alldocs = dao.getDocuments()
         assertThat(alldocs).doesNotContain(document)
@@ -54,7 +54,7 @@ class DocumentDaoTest {
 
     @Test
     fun addRemoveBook() {
-        val document = DocumentEntity("test", "sports", 23, "test.png")
+        val document = DocumentEntity("file:///storage/emulated/0/Download/test.pdf", "sports", 23, "test.png")
         dao.addDocument(document)
         dao.removeDocument(document)
         val alldocs = dao.getDocuments()
