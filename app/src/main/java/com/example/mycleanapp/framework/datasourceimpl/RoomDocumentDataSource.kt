@@ -34,6 +34,10 @@ class RoomDocumentDataSource(val context: Context) : DocumentDataSource {
         )
     }
 
+    override fun remove(document: Document) = documentDao.removeDocument(
+        DocumentEntity(document.url, document.name, document.size, document.thumbnail)
+    )
+
     override fun readAll(): List<Document> = documentDao.getDocuments().map {
         Document(
             it.uri,
@@ -42,8 +46,4 @@ class RoomDocumentDataSource(val context: Context) : DocumentDataSource {
             it.thumbnailUri
         )
     }
-
-    override fun remove(document: Document) = documentDao.removeDocument(
-        DocumentEntity(document.url, document.name, document.size, document.thumbnail)
-    )
 }
