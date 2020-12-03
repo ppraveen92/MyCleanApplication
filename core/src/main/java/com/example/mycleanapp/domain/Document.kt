@@ -1,7 +1,5 @@
 package com.example.mycleanapp.domain
 
-import java.io.Serializable
-
 /*
 * Document model
 * */
@@ -10,8 +8,4 @@ data class Document(
     val name: String,
     val size: Int,
     val thumbnail: String
-) : Serializable {
-    companion object {
-        val EMPTY = Document("", "", 0, "")
-    }
-}
+)

@@ -19,6 +19,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this,
             ViewModelFactory
         ).get(LibraryViewModel::class.java)
-        viewModel.addDocument(Uri.parse("file path"))
+        viewModel.addDocument(Uri.parse("@file path"))
     }
 }
