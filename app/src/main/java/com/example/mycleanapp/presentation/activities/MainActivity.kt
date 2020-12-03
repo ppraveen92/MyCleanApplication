@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             this,
             ViewModelFactory
         ).get(LibraryViewModel::class.java)
-        btnadd.setOnClickListener { viewModel.addDocument(Uri.parse("@file path")) }
-        btnremove.setOnClickListener { viewModel.removeDocument(Uri.parse("@file path")) }
+        btnadd.setOnClickListener { viewModel.addDocument(Uri.parse("file:///storage/emulated/0/Download/test.pdf")) }
+        btnremove.setOnClickListener { viewModel.removeDocument(Uri.parse("file:///storage/emulated/0/Download/test.pdf")) }
     }
 }
